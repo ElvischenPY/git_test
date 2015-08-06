@@ -1,0 +1,48 @@
+config SENSOR_AKM09911_MAG
+	tristate "AKM09911 3-axis electronic compass sensor driver"
+	depends on I2C
+	default n
+	help
+	  Say Y here if you want to enable the akm09911 ecompass sensor
+	  driver.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called akm09911.
+
+config SENSOR_LITEON_LTR553ALS
+        tristate "Liteon 553ALS sensor driver"
+        depends on I2C
+        default n
+        help
+          Say Y here if you want to enable the Liteon 553ALS sensor
+          driver.
+
+config SENSOR_TOUCHKEY_IT7236
+        tristate "ITE 7236 touchkey driver"
+        depends on I2C
+        default n
+        help
+          Say Y here if you want to enable the ITE 7236 touchkey driver.
+
+config SENSOR_UV
+        tristate "Sharp ga1auv100 sensor driver"
+        depends on I2C
+        default n
+        help
+          Say Y here if you want to enable the Sharp ga1auv100 sensor driver.
+
+config SENSOR_RGB_NXU8010
+        tristate "nxu8010 RGB sensor driver"
+        depends on I2C
+        default n
+        help
+          Say Y here if you want to enable the nxu8010 RGB sensor driver.
+
+config SENSOR_HALL_AH1883
+        tristate "AH1883 hall sensor driver"
+        depends on I2C
+        default n
+        help
+          Say Y here if you want to enable the AH1883 hall sensor driver.
+
+source "drivers/input/misc/sensors/bosch/Kconfig"
