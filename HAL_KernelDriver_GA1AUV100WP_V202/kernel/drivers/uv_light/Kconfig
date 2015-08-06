@@ -1,0 +1,12 @@
+menu "UV & Light Sensor"
+
+config UV_LIGHT
+	tristate "enable UV_LIGHT"
+	default m
+
+config UV_LIGHT_DEBUG
+    bool "Debug UV_LIGHT calls"
+	default n
+
+endmenu
+
