@@ -1,0 +1,38 @@
+&mdss_hdmi_tx {
+	pinctrl-names = "hdmi_hpd_active", "hdmi_ddc_active",
+				"hdmi_active", "hdmi_sleep";
+	pinctrl-0 = <&mdss_hdmi_hpd_active &mdss_hdmi_ddc_suspend>;
+	pinctrl-1 = <&mdss_hdmi_hpd_active &mdss_hdmi_ddc_active>;
+	pinctrl-2 = <&mdss_hdmi_hpd_active &mdss_hdmi_ddc_suspend>;
+	pinctrl-3 = <&mdss_hdmi_hpd_active &mdss_hdmi_ddc_active>;
+	pinctrl-4 = <&mdss_hdmi_hpd_suspend &mdss_hdmi_ddc_suspend>;
+};
+&soc {
+	goodix_gf318m@0 {
+		compatible = "goodix,fingerprint";
+		spi-max-frequency = <4800000>;
+		reg = <0>;
+		input-device-name = "gf318m";
+		interrupt-parent = <&tlmm>;
+		interrupts = <121 0>;
+		//spi-qup-id = <10>;
+
+		vcc_spi-supply  = <&pm8994_l21>;
+		vdd_ana-supply  = <&pm8994_l21>;
+		vdd_io-supply   = <&pm8994_l21>;
+
+		goodix,gpio_reset = <&tlmm 31 0x00>;
+		goodix,gpio_irq = <&tlmm 121 0x00>;
+
+		pinctrl-names = "goodix_irq","goodix_reset";
+		pinctrl-0 = <&goodix_irq_active &goodix_reset_active>;
+		pinctrl-1 = <&goodix_irq_suspend &goodix_reset_suspend>;
+
+		clock-names = "iface_clk", "core_clk";
+		clocks = <&clock_gcc clk_gcc_blsp2_ahb_clk>,
+			<&clock_gcc clk_gcc_blsp2_qup5_spi_apps_clk>;
+
+//		pinctrl-names = "default";
+	};
+};
+

@@ -1,0 +1,13 @@
+#include "msm8996-le_zl1-evt.dtsi"
+
+/* Add DVT1 different HW configs below */
+&pmi8994_charger {
+        qcom,float-voltage-mv = <4400>;
+        qcom,fastchg-current-ma = <4500>;
+        qcom,thermal-mitigation = <4000 2500 1500 1500 0>;
+        qcom,main_chg_fcc_percent = <62 60 66 66 100>;
+        qcom,thermal-discharge-vol = <4400 4400 4400 4100 4400>;
+        qcom,usb-thermal-mitigation = <3000 2000 1000 0 0>;
+        qcom,fastchg-current-comp = <1200>;
+        qcom,float-voltage-comp = <16>;
+};

@@ -1,0 +1,32 @@
+/*
+* This dtsi is for device check. They may use in bc check and running test.
+*/
+/{
+	devcheck: devcheck {
+		compatible = "letv,device_check";
+		touch_panel = <0>;
+		compass = <0>;
+		gravity_gyroscope_sensor = <0>;
+		proximity_light_sensor = <0>;
+		hall_sensor = <0>;
+		camera_main = <0>;
+		camera_slave = <0>;
+		fflash = <0>;
+		nfc = <0>;
+		rf = <0>;
+		pa_receiver = <0>;
+		pa_speaker = <0>;
+		charge_smb1351 = <0>;
+		charge_pmi8994 = <0>;
+		battery = <0>;
+		irda = <0>;
+		usb_switch = <0>;
+		vibrator = <0>;
+		fingerprint = <0>;
+		fm = <0>;
+		wifi = <0>;
+		bt = <0>;
+		gps = <0>;
+		status = "disabled";
+	};
+};
