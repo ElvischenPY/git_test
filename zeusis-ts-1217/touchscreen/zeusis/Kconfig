@@ -1,0 +1,27 @@
+#
+# zeusis touchscreen driver configuration
+#
+
+config TOUCHSCREEN_ZEUSIS_TS
+	bool "zeusis touchscreen"
+	default n
+	help
+	  If you say yes here you get support for zeusis touchscreen.
+
+config ZEUSIS_TS_TEST
+	bool "zeusis touchscreen test"
+	default n
+	help
+	  If you say yes here you get support for zeusis touchscreen.
+
+source "drivers/input/touchscreen/zeusis/panel/Kconfig"
+source "drivers/input/touchscreen/zeusis/panel/cyttsp5/Kconfig"
+
+#sensor unification for differ platform
+menu "zeusis linux device driver support package"
+config ZEUSIS_TP_COLOR_INFO
+	bool "zeusis tp color info"
+	default n
+	help
+		get the zeusis tp color information.
+endmenu
